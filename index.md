@@ -100,7 +100,7 @@
 - 可视化工具：tableau、ggplot
 - 数据挖掘工具：R、python、spark
 - 数据产品：Xmind、Axure
-- 版本管理、文档：Svn、Git
+- 版本管理：Svn、Git
 
 
 
