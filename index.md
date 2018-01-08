@@ -1,15 +1,12 @@
+<h1 align = "center">:rocket: 个人简历 :facepunch:</h1>
 
 ---
-
 ## 联系方式
-
 - 手机：18550288233
 - QQ/WeChat：313303303
 - Email：313303303@qq.com
 
-
 ---
-
 ## 个人信息
 
  - 袁杰/男/1991
