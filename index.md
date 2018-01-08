@@ -67,59 +67,9 @@
 
 ### 反作弊系统
 
-- 模型目标：识别出广告点击/转发中作弊用户
-
-- 根据用户的使用行为分析作弊用户与正常用户的区别，不断寻找特征、特征值
-
-- 使用RandomForest的模型为主要分类器，通过调整AUC阈值，结合公司实际业务应用场景来平衡准确率
-
-- 最终将纯规则与RF模型相融合，模型部署线上效果良好
-
-
-
-
-## 2015.05 ~ 2015.10 实验室项目
-
-### 新浪微博互动行为预测模型
-
-- 模型目标：预测下一阶段微博的用户互动量
-
-- 前期使用常值回归和纯规则为核心构建预测模型，因为数据偏移严重，仅适用于部分数据
-
-- 后期将数据离散化，把连续属性问题转化为离散属性问题并结合文本特征，选取随机森林及神经网络分类器构建最终模型。
 
 ---
 ## 其他项目
-
-### 报告及讲义
-
- - 2016.08公司内部技术分享：
-    - [数据常用操作(R)](http://note.youdao.com/noteshare?id=3376830b87f43525b9bb2a6e00c5e3dc)
-    - [数据常用操作(python)](http://note.youdao.com/noteshare?id=b0b03b5b2c8084f0857518ea08af0091)
- - 2016.07公司产品分析：[广电产品关联分析](http://note.youdao.com/noteshare?id=271b6924d16a4d59f8355cf89b5b4f92)
- - 2016.07公司内部技术分享：[数据挖掘流程简介](http://note.youdao.com/noteshare?id=0568bf8e93ff81b4ac81f48e4f256530)
-
-
-
----
-## 技能清单
-
-以下均为我熟练使用的技能
-
-- 操作系统：Linux、macOS
-- 数据挖掘常用算法：LR、SVM、CART、RandomForest、GBDT、Xgboost等
-- 数据库相关：
-    - sql：MySQL、HiveSql、SparkSql、Oracle
-    - nosql：MongoDB
-- 可视化工具：tableau、ggplot
-- 数据挖掘工具：R、python、spark
-- 数据产品：Xmind、Axure
-- 版本管理、文档：Svn、Markdown
-
-
-
----
-## 大数据竞赛
 
 参加的比赛比较多每一次都有不同程度的成长：
 
@@ -136,8 +86,28 @@
 - [天池大数据：菜鸟-需求预测与分仓规划](http://note.youdao.com/noteshare?id=7cdcc5dcd0b9120152f48be9d483cc07)
 
 
----
 
+---
+## 技能清单
+
+以下均为我熟练使用的技能
+
+- 操作系统：Linux、macOS
+- 数据挖掘常用算法：LR、SVM、CART、RandomForest、GBDT、Xgboost等
+- 数据库相关：
+    - sql：MySQL、HiveSql、SparkSql、Oracle
+    - nosql：MongoDB
+- 可视化工具：tableau、ggplot
+- 数据挖掘工具：R、python、spark
+- 数据产品：Xmind、Axure
+- 版本管理、文档：Svn、Git
+
+
+
+
+
+
+---
 ## 致谢
+
 感谢您花时间阅读了我的简历，期待能有机会和您共事。
-[link](http://note.youdao.com/)
