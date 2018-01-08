@@ -73,12 +73,11 @@
 ## **技能清单**
 
 以下均为我常用的技能
-
 - 操作系统：Linux/macOS
-- 数据挖掘常用算法：LR/SVM/CART/RandomForest/GBDT/Xgboost/LightGBM等
+- 机器学习常用算法：LR/RandomForest/GBDT/Xgboost/LightGBM等
 - 数据库相关：
     - SQL：熟悉Hive/SparkSql/MySQL/Oracle
-    - NoSQL：了解HBase/Redis/MongoDB
+    - NoSQL：了解Hbase/Redis/MongoDB
 - 数据挖掘工具：熟悉R/Python/Spark/了解Scala
 - 数据产品：Xmind、Axure
 - 版本管理：Svn、Git
