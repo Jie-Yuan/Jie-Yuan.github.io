@@ -1,9 +1,9 @@
-<h1 align = "center">:rocket: 个人简历 :facepunch:</h1>
+<h1 align = "center"> 个人简历 </h1>
 
 ---
 ## 联系方式
 - 手机：18550288233
-- QQ/WeChat：313303303
+- QQ/微信：313303303
 - Email：313303303@qq.com
 
 ---
