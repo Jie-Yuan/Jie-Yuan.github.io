@@ -90,7 +90,7 @@
 ---
 ## 技能清单
 
-以下均为我熟练使用的技能
+以下均为我常用的技能
 
 - 操作系统：Linux/macOS
 - 数据挖掘常用算法：LR/SVM/CART/RandomForest/GBDT/Xgboost/LightGBM等
