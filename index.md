@@ -1,4 +1,4 @@
-<h1 align = "center"> 个人简历 </h1>
+<h1 align = "center"> 简历 </h1>
 
 ---
 ## 联系方式
