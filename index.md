@@ -12,7 +12,7 @@
 - 袁杰/男/1991
 - 硕士/河海大学/电子与通信工程
 - 工作年限：2年
-- Github：https://github.com/Jie-Yuan
+- Github：`https://github.com/Jie-Yuan`
 - 目前职位：算法工程师
 - 期望职位：数据挖掘/机器学习/风控建模工程师
 - 期望城市：南京
