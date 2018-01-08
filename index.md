@@ -92,13 +92,12 @@
 
 以下均为我熟练使用的技能
 
-- 操作系统：Linux、macOS
-- 数据挖掘常用算法：LR、SVM、CART、RandomForest、GBDT、Xgboost等
+- 操作系统：Linux/macOS
+- 数据挖掘常用算法：LR/SVM/CART/RandomForest/GBDT/Xgboost/LightGBM等
 - 数据库相关：
-    - sql：MySQL、HiveSql、SparkSql、Oracle
-    - nosql：MongoDB
-- 可视化工具：tableau、ggplot
-- 数据挖掘工具：R、python、spark
+    - SQL：熟悉Hive/SparkSql/MySQL/Oracle
+    - NoSQL：了解HBase/Redis/MongoDB
+- 数据挖掘工具：熟悉R/Python/Spark/了解Scala
 - 数据产品：Xmind、Axure
 - 版本管理：Svn、Git
 
