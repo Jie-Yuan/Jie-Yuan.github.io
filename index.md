@@ -77,7 +77,7 @@
 - 机器学习常用算法：LR/RandomForest/GBDT/Xgboost/LightGBM等
 - 数据库相关：
     - SQL：熟悉Hive/SparkSql/MySQL/Oracle
-    - NoSQL：了解Hbase/Redis/MongoDB
+    - NoSQL：了解Hbase/Redis/MongoDB
 - 数据挖掘工具：熟悉R/Python/Spark/了解Scala
 - 数据产品：Xmind、Axure
 - 版本管理：Svn、Git
