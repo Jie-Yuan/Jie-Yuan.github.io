@@ -72,19 +72,12 @@
 ---
 ## **其他项目**
 参加的比赛比较多每一次都有不同程度的成长：
-- 融360用户贷款风险预测
-- 天池大数据：商场中精确定位用户所在店铺
 
-- [天池大数据：最后一公里极速配送](http://note.youdao.com/noteshare?id=0bb5e3f202dcc988c90b71d654d41182)
-
-- [天池大数据：新浪微博互动预测大赛](http://note.youdao.com/noteshare?id=19a5fd7cb19b3b959e487d6dba1e5cec)
-
-- [天池大数据：市民出行公交线路选乘预测[广东赛场二]](http://note.youdao.com/noteshare?id=5fa800f5894a7bf918b4c990f633c8f0)
-
-- [天池大数据：淘宝穿衣搭配算法](http://note.youdao.com/noteshare?id=854a246029d0e996b2895fe9b2ece8eb)
-
-- [天池大数据：菜鸟-需求预测与分仓规划](http://note.youdao.com/noteshare?id=7cdcc5dcd0b9120152f48be9d483cc07)
-
+- CCF大数据：企业经营退出风险预测 Rank4
+- Kesci科赛: 携程客户流失概率预测 Rank11
+- 百度和西安交大联合举办：核心实体识别赛 Rank20
+- 天池大数据：商场中精确定位用户所在店铺 Rank31/2845
+- 天池大数据：新浪微博互动预测大赛 Rank80/2293
 
 
 ---
