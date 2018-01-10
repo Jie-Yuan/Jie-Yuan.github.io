@@ -93,6 +93,7 @@
 以下均为我常用的技能
 - 操作系统：Linux/macOS
 - 机器学习常用算法：LR/RandomForest/GBDT/Xgboost/LightGBM等
+- 常用算法框架：Sklearn/SparkMLlib/Keras等
 - 数据库相关：
     - SQL：熟悉Hive/SparkSql/MySQL/Oracle
     - NoSQL：了解Hbase/Redis/MongoDB
