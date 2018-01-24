@@ -87,7 +87,7 @@
 - 操作系统：Linux/macOS
 - 数据挖掘工具：熟悉R/Python/Spark/了解Scala
 - 常用算法框架：Sklearn/SparkMLlib/Keras等
-- 常用机器学习算法：LR/RandomForest/GBDT/Xgboost/LightGBM等
+- 常用机器学习算法：LR/RandomForest/GBDT/XGBoost/LightGBM/CatBoost/RGF等
 - 数据库相关：
     - SQL：熟悉Hive/SparkSql/MySQL/Oracle
     - NoSQL：了解Hbase/Redis/MongoDB
