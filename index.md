@@ -26,7 +26,7 @@
 - 建模工具：R/Python/Spark/Hive/Scala
 - 算法框架：Sklearn/Keras/Pytorch/Tensorflow/SparkMLlib等
 - 常用算法：LR/RandomForest/GBDT/XGBoost/LightGBM/CatBoost/RGF等
-- 推荐算法: CF/ALS/FM/FFM/FTRL/Word2vec等
+- 推荐算法：CF/ALS/FM/FFM/FTRL/Word2vec等
 - 数据库相关：
     - SQL：了解Hive/SparkSql/MySQL/Oracle等应用及工作原理
     - NoSQL：了解Hbase/Redis/MongoDB等应用及工作原理
