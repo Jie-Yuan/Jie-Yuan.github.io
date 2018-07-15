@@ -23,10 +23,9 @@
 ## 技能清单
 
 - 操作系统：Linux/macOS
-- 建模工具：R/Python/Spark/Hive/Scala
+- 编程技能：R/Python/Spark/Hive/Scala
 - 算法框架：Sklearn/Keras/Pytorch/Tensorflow/SparkMLlib等
 - 常用算法：LR/RandomForest/GBDT/XGBoost/LightGBM/CatBoost/RGF等
-- 推荐算法：CF/ALS/FM/FFM/FTRL/Word2vec等
 - 数据库相关：
     - SQL：了解Hive/SparkSql/MySQL/Oracle等应用及工作原理
     - NoSQL：了解Hbase/Redis/MongoDB等应用及工作原理
@@ -99,13 +98,6 @@
 - 广电产品收入预测
 - 广电产品关联分析
 - 广电客户市场分群
-
-
----
-## 温康纳机械制造有限公司（德企）    (2015.03 ~ 2016.03)    **`算法实习生`**
-
-- 电气/通信类算法相关项目
-
 
 
 
