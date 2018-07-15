@@ -18,7 +18,21 @@
 - 期望城市：南京
 - 其它信息：
     - 全国大学生数学竞赛预赛一等奖/决赛三等奖
-    
+
+---
+## 技能清单
+
+- 操作系统：Linux/macOS
+- 算法建模工具：R/Python/Spark/Hive/Scala
+- 算法框架：Sklearn/Keras/Pytorch/Tensorflow/SparkMLlib等
+- 机器学习算法：LR/RandomForest/GBDT/XGBoost/LightGBM/CatBoost/RGF等
+- 推荐系统算法: CF/ALS/FM/FFM/FTRL/Word2vec等
+- 数据库相关：
+    - SQL：了解Hive/SparkSql/MySQL/Oracle等应用及工作原理
+    - NoSQL：了解Hbase/Redis/MongoDB等应用及工作原理
+- 数据产品工具：Xmind/Axure
+- 版本管理：Svn/Git
+
 ---
 ## 竞赛经历
 参加的比赛比较多每一次都有不同程度的成长：
@@ -93,19 +107,7 @@
 - 电气/通信类算法相关项目
 
 
----
-## 技能清单
 
-- 操作系统：Linux/macOS
-- 算法建模工具：R/Python/Spark/Hive/Scala
-- 算法框架：Sklearn/Keras/Pytorch/Tensorflow/SparkMLlib等
-- 机器学习算法：LR/RandomForest/GBDT/XGBoost/LightGBM/CatBoost/RGF等
-- 推荐系统算法: CF/ALS/FM/FFM/FTRL/Word2vec等
-- 数据库相关：
-    - SQL：了解Hive/SparkSql/MySQL/Oracle等应用及工作原理
-    - NoSQL：了解Hbase/Redis/MongoDB等应用及工作原理
-- 数据产品工具：Xmind、Axure
-- 版本管理：Svn、Git
 
 
 ---
