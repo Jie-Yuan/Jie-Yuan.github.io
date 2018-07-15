@@ -72,7 +72,7 @@
 ### 推荐系统
 > 主要负责理财、众筹、保险等个性化推荐的数据清洗/特征工程/算法实现以及推荐算法架构的搭建
 
-- 协同过滤：基于ALS的协同过滤模型
+- 协同过滤：基于`ALS`的协同过滤模型
 - 分类器：基于业务规则筛选候选商品；基于`EntityEmbedding/GBDT`提取特征；最后基于`XGB/LGB`等分类器进行商品排序
 - 看了又看/买了又买：基于商品标题、详情及点击顺序等语料的`Word2Vec`模型，用于匹配相似商品
 
@@ -82,8 +82,8 @@
 
 - 根据滑窗定义正负样本，通过IV选择目标场景，选取AUC作为线下评估指标
 - 第一类模型：参照传统信用评分卡模型，以LR为基模型建模，`HQL`部署
-- 第二类模型：以SparkMLlib中GBDT/RandomForest为基模型建模，`Spark`部署
-- 第三类模型：采用Sklearn/Xgboost/LightGBM/NN等算法构建模型，`Python/PMML/RestfulAPI`部署
+- 第二类模型：以`SparkML`中`GBDT/RandomForest`为基模型建模，`Spark`部署
+- 第三类模型：采用`Sklearn/Xgboost/LightGBM/NN`等算法构建模型，`Python/PMML/RestfulAPI`部署
 - 各场景的线下AUC集中在0.85左右，线上转化率在10%左右 
 - O2O营销效果周报：营销人次100w+，转化人次10w+，转化金额在8000w+
 
