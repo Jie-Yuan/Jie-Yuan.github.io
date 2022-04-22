@@ -17,14 +17,14 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"muyuuuu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yuanjie-ai.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="开完一坑又一坑，这应该是GUI系列的完结稿了。时至今日，很多方法和函数已经忘记，一部分整理到了仓库，用时查阅；一部分学会了查官方文档。比如布局中的addSpacing和addStretch填充，以及不同空间该如何Qt.Align，需要大量的经验。用过一次就会知道功能，所以，官方文档永远的神。">
 <meta name="keywords" content="GUI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PyQt5多线程">
-<meta property="og:url" content="https://muyuuuu.github.io/2021/02/05/PyQt5-QThread/index.html">
+<meta property="og:url" content="https://yuanjie-ai.github.io/2021/02/05/PyQt5-QThread/index.html">
 <meta property="og:site_name" content="Just for Life.">
 <meta property="og:description" content="开完一坑又一坑，这应该是GUI系列的完结稿了。时至今日，很多方法和函数已经忘记，一部分整理到了仓库，用时查阅；一部分学会了查官方文档。比如布局中的addSpacing和addStretch填充，以及不同空间该如何Qt.Align，需要大量的经验。用过一次就会知道功能，所以，官方文档永远的神。">
 <meta property="og:locale" content="zh-CN">
@@ -33,7 +33,7 @@
 <meta name="twitter:title" content="PyQt5多线程">
 <meta name="twitter:description" content="开完一坑又一坑，这应该是GUI系列的完结稿了。时至今日，很多方法和函数已经忘记，一部分整理到了仓库，用时查阅；一部分学会了查官方文档。比如布局中的addSpacing和addStretch填充，以及不同空间该如何Qt.Align，需要大量的经验。用过一次就会知道功能，所以，官方文档永远的神。">
 
-<link rel="canonical" href="https://muyuuuu.github.io/2021/02/05/PyQt5-QThread/">
+<link rel="canonical" href="https://yuanjie-ai.github.io/2021/02/05/PyQt5-QThread/">
 
 
 <script id="page-configurations">
@@ -227,7 +227,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://muyuuuu.github.io/2021/02/05/PyQt5-QThread/">
+    <link itemprop="mainEntityOfPage" href="https://yuanjie-ai.github.io/2021/02/05/PyQt5-QThread/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -294,7 +294,7 @@
       
         <p>开完一坑又一坑，这应该是<code>GUI</code>系列的完结稿了。时至今日，很多方法和函数已经忘记，一部分整理到了仓库，用时查阅；一部分学会了查官方文档。比如布局中的<code>addSpacing</code>和<code>addStretch</code>填充，以及不同空间该如何<code>Qt.Align</code>，需要大量的经验。用过一次就会知道功能，所以，官方文档永远的神。</p>
 <a id="more"></a>
-<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>在之前的<a href="https://muyuuuu.github.io/2020/05/12/reverse-radar-multi-thread/">制作倒车雷达</a>中，已经说过了多线程的应用背景。那会儿是项目驱动，现在来彻底了结。一个软件中，如果制作一个计数功能。那么主进程进入计数函数，没有进程负责界面的显示，就会导致软件卡死。如下代码：</p>
+<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>在之前的<a href="https://yuanjie-ai.github.io/2020/05/12/reverse-radar-multi-thread/">制作倒车雷达</a>中，已经说过了多线程的应用背景。那会儿是项目驱动，现在来彻底了结。一个软件中，如果制作一个计数功能。那么主进程进入计数函数，没有进程负责界面的显示，就会导致软件卡死。如下代码：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys, time</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> (QMainWindow, QWidget, QHBoxLayout, QApplication, </span><br><span class="line">                             QPushButton)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">mainwindow</span><span class="params">(QMainWindow)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super(mainwindow, self).__init__()</span><br><span class="line"></span><br><span class="line">        layout = QHBoxLayout()</span><br><span class="line">        w = QWidget()</span><br><span class="line">        w.setLayout(layout)</span><br><span class="line">        self.setCentralWidget(w)</span><br><span class="line"></span><br><span class="line">        btn = QPushButton(<span class="string">"点击"</span>)</span><br><span class="line">        layout.addWidget(btn)</span><br><span class="line">        btn.clicked.connect(self.count)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">count</span><span class="params">(self)</span>:</span></span><br><span class="line">        num = <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> num &lt;= <span class="number">12000</span>:</span><br><span class="line">            time.sleep(<span class="number">0.1</span>)</span><br><span class="line">            num += <span class="number">1</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app = QApplication([])</span><br><span class="line">    m = mainwindow()</span><br><span class="line">    m.show()</span><br><span class="line">    sys.exit(app.exec())</span><br></pre></td></tr></table></figure>
 <p>需要额外注意的是，在Qt的开发中，一定不能使用time.sleep()这种方法。Qt是框架是基于事件循环的，<code>time.sleep()</code>因为它会阻塞事件的循环，导致窗口冻结，直接跳到<code>sleep</code>后的程序，从而阻止了GUI的重新绘制，并没有中间的过程。所以在Qt中，可以考虑使用多线程来解决这些问题，如：分为显示线程和工作线程，显示事件负责GUI的显示，工作事件负责刷新物体的位置。</p>
 <h1 id="QTimer"><a href="#QTimer" class="headerlink" title="QTimer()"></a>QTimer()</h1><p>这是一个实现多线程的最简单的工具，通常用于周期性检测，比<code>sleep()</code>这种强行停止窗口事件的循环要好上很多。它有常用的两个函数：</p>

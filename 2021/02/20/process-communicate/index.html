@@ -17,14 +17,14 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"muyuuuu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yuanjie-ai.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="在使用多进程编程时，会经常涉及到进程之间通信的问题。除了借助文件、特殊变量等，还可以借助一些特殊的数据结构完成功能复杂的通信。并行应用常常需要在进程之间交换数据。python的Multiprocessing库有两个通信通道可以交换对象：队列(queue)和管道(pipe)。">
 <meta name="keywords" content="OS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统『四』：进程通信">
-<meta property="og:url" content="https://muyuuuu.github.io/2021/02/20/process-communicate/index.html">
+<meta property="og:url" content="https://yuanjie-ai.github.io/2021/02/20/process-communicate/index.html">
 <meta property="og:site_name" content="Just for Life.">
 <meta property="og:description" content="在使用多进程编程时，会经常涉及到进程之间通信的问题。除了借助文件、特殊变量等，还可以借助一些特殊的数据结构完成功能复杂的通信。并行应用常常需要在进程之间交换数据。python的Multiprocessing库有两个通信通道可以交换对象：队列(queue)和管道(pipe)。">
 <meta property="og:locale" content="zh-CN">
@@ -33,7 +33,7 @@
 <meta name="twitter:title" content="操作系统『四』：进程通信">
 <meta name="twitter:description" content="在使用多进程编程时，会经常涉及到进程之间通信的问题。除了借助文件、特殊变量等，还可以借助一些特殊的数据结构完成功能复杂的通信。并行应用常常需要在进程之间交换数据。python的Multiprocessing库有两个通信通道可以交换对象：队列(queue)和管道(pipe)。">
 
-<link rel="canonical" href="https://muyuuuu.github.io/2021/02/20/process-communicate/">
+<link rel="canonical" href="https://yuanjie-ai.github.io/2021/02/20/process-communicate/">
 
 
 <script id="page-configurations">
@@ -227,7 +227,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://muyuuuu.github.io/2021/02/20/process-communicate/">
+    <link itemprop="mainEntityOfPage" href="https://yuanjie-ai.github.io/2021/02/20/process-communicate/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -292,7 +292,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>在使用多进程编程时，会经常涉及到进程之间通信的问题。除了借助文件、<a href="https://muyuuuu.github.io/2021/02/18/simple-multithread/">特殊变量</a>等，还可以借助一些特殊的数据结构完成功能复杂的通信。并行应用常常需要在进程之间交换数据。python的Multiprocessing库有两个通信通道可以交换对象：队列(queue)和管道(pipe)。</p>
+        <p>在使用多进程编程时，会经常涉及到进程之间通信的问题。除了借助文件、<a href="https://yuanjie-ai.github.io/2021/02/18/simple-multithread/">特殊变量</a>等，还可以借助一些特殊的数据结构完成功能复杂的通信。并行应用常常需要在进程之间交换数据。python的Multiprocessing库有两个通信通道可以交换对象：队列(queue)和管道(pipe)。</p>
 <a id="more"></a>
 <ul>
 <li>队列返回一个进程共享的队列，队列的操作是<a href="https://docs.python.org/3/library/multiprocessing.html#exchanging-objects-between-processes" target="_blank" rel="noopener">线程安全</a>的，也是进程安全的。任何可序列化的对象（Python通过 pickable 模块序列化对象）都可以通过它进行交换。</li>
@@ -324,7 +324,7 @@
 <li>子进程虽然在不同的变量空间中，他们的变量也不一样。这不影响通信，也就是说，子进程发送的数据，被另一个子进程收到，这也正是管道的用处。</li>
 <li>在<code>sender()</code>函数中关闭了发送端，但我在主进程检测发送端是否关闭的时候他又<strong>没有关闭</strong>。这是因为多进程不共享变量，子进程关闭不会影响主进程。神奇。</li>
 </ul>
-<h1 id="与阻塞的组合"><a href="#与阻塞的组合" class="headerlink" title="与阻塞的组合"></a>与阻塞的组合</h1><p>结合<a href="https://muyuuuu.github.io/2021/02/18/simple-multithread/">之前</a>提到的阻塞，有四种工作模式：</p>
+<h1 id="与阻塞的组合"><a href="#与阻塞的组合" class="headerlink" title="与阻塞的组合"></a>与阻塞的组合</h1><p>结合<a href="https://yuanjie-ai.github.io/2021/02/18/simple-multithread/">之前</a>提到的阻塞，有四种工作模式：</p>
 <ul>
 <li><strong>同步阻塞方式</strong>：发送方发送请求之后一直等待响应。接收方处理请求时，直到进行的操作返回结果后，才响应发送方，期间不能进行其他工作。</li>
 <li><strong>同步非阻塞方式</strong>：发送方发送请求之后，一直等待响应。接受方处理请求时进行的IO操作如果不能马上的得到结果，就立即返回，去做其他事情。但是由于没有得到请求处理结果，不响应发送方，发送方一直等待。当操作完成以后，将完成状态和结果通知接收方，接收方再响应发送方，发送方才进入下一次请求过程。（实际不应用）</li>

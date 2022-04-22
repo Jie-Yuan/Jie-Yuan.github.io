@@ -17,14 +17,14 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"muyuuuu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yuanjie-ai.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="昨天写程序遇到一个问题，pyqt5 加载常规的图片完全可以显示。可当加载超清的高分辨率图片时，只能显示一个小角落。可我就想把一张 3840x2160 的图片加载到一个 800x600 的标签里该怎么办呢，如何自适应放缩尺寸？国内社区众所周知大多是抄袭，没什么解决方案，就像本文刚发布两天就被抄走了；外网站搜了一下也没找到现成的解决方案，我知道又到了我开坑的时候了。博客能火全靠pyqt5，以后请叫我p">
 <meta name="keywords" content="GUI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PyQt5 显示超清高分辨率图片">
-<meta property="og:url" content="https://muyuuuu.github.io/2021/04/10/pyqt5-load-huge-image/index.html">
+<meta property="og:url" content="https://yuanjie-ai.github.io/2021/04/10/pyqt5-load-huge-image/index.html">
 <meta property="og:site_name" content="Just for Life.">
 <meta property="og:description" content="昨天写程序遇到一个问题，pyqt5 加载常规的图片完全可以显示。可当加载超清的高分辨率图片时，只能显示一个小角落。可我就想把一张 3840x2160 的图片加载到一个 800x600 的标签里该怎么办呢，如何自适应放缩尺寸？国内社区众所周知大多是抄袭，没什么解决方案，就像本文刚发布两天就被抄走了；外网站搜了一下也没找到现成的解决方案，我知道又到了我开坑的时候了。博客能火全靠pyqt5，以后请叫我p">
 <meta property="og:locale" content="zh-CN">
@@ -33,7 +33,7 @@
 <meta name="twitter:title" content="PyQt5 显示超清高分辨率图片">
 <meta name="twitter:description" content="昨天写程序遇到一个问题，pyqt5 加载常规的图片完全可以显示。可当加载超清的高分辨率图片时，只能显示一个小角落。可我就想把一张 3840x2160 的图片加载到一个 800x600 的标签里该怎么办呢，如何自适应放缩尺寸？国内社区众所周知大多是抄袭，没什么解决方案，就像本文刚发布两天就被抄走了；外网站搜了一下也没找到现成的解决方案，我知道又到了我开坑的时候了。博客能火全靠pyqt5，以后请叫我p">
 
-<link rel="canonical" href="https://muyuuuu.github.io/2021/04/10/pyqt5-load-huge-image/">
+<link rel="canonical" href="https://yuanjie-ai.github.io/2021/04/10/pyqt5-load-huge-image/">
 
 
 <script id="page-configurations">
@@ -227,7 +227,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://muyuuuu.github.io/2021/04/10/pyqt5-load-huge-image/">
+    <link itemprop="mainEntityOfPage" href="https://yuanjie-ai.github.io/2021/04/10/pyqt5-load-huge-image/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">

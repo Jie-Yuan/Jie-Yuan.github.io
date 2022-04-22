@@ -17,14 +17,14 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"muyuuuu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yuanjie-ai.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="最早在天池玩耍的时候接触到了目标检测。当时真的啥都不知道，头铁，一点点的开坑造轮子。后来再看前几名开源的程序，发现有很多库可以使用，切图，目标检测等，比如数据增强、目标检测都有现成的工具箱。所以想着，就先用调库的形式写一个简单的 baseline，下一个任务直接用现成的代码，省点事，所以写了一个这样的简单的平台。">
 <meta name="keywords" content="CV">
 <meta property="og:type" content="article">
 <meta property="og:title" content="目标检测篇：目标检测快速训练与推理框架">
-<meta property="og:url" content="https://muyuuuu.github.io/2021/05/03/fast-train-eval-platform-fasterrcnn-torch/index.html">
+<meta property="og:url" content="https://yuanjie-ai.github.io/2021/05/03/fast-train-eval-platform-fasterrcnn-torch/index.html">
 <meta property="og:site_name" content="Just for Life.">
 <meta property="og:description" content="最早在天池玩耍的时候接触到了目标检测。当时真的啥都不知道，头铁，一点点的开坑造轮子。后来再看前几名开源的程序，发现有很多库可以使用，切图，目标检测等，比如数据增强、目标检测都有现成的工具箱。所以想着，就先用调库的形式写一个简单的 baseline，下一个任务直接用现成的代码，省点事，所以写了一个这样的简单的平台。">
 <meta property="og:locale" content="zh-CN">
@@ -33,7 +33,7 @@
 <meta name="twitter:title" content="目标检测篇：目标检测快速训练与推理框架">
 <meta name="twitter:description" content="最早在天池玩耍的时候接触到了目标检测。当时真的啥都不知道，头铁，一点点的开坑造轮子。后来再看前几名开源的程序，发现有很多库可以使用，切图，目标检测等，比如数据增强、目标检测都有现成的工具箱。所以想着，就先用调库的形式写一个简单的 baseline，下一个任务直接用现成的代码，省点事，所以写了一个这样的简单的平台。">
 
-<link rel="canonical" href="https://muyuuuu.github.io/2021/05/03/fast-train-eval-platform-fasterrcnn-torch/">
+<link rel="canonical" href="https://yuanjie-ai.github.io/2021/05/03/fast-train-eval-platform-fasterrcnn-torch/">
 
 
 <script id="page-configurations">
@@ -227,7 +227,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://muyuuuu.github.io/2021/05/03/fast-train-eval-platform-fasterrcnn-torch/">
+    <link itemprop="mainEntityOfPage" href="https://yuanjie-ai.github.io/2021/05/03/fast-train-eval-platform-fasterrcnn-torch/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">

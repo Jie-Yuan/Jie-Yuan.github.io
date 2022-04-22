@@ -17,14 +17,14 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"muyuuuu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yuanjie-ai.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="又来开计算机视觉的坑了，这次一定做好整理和记录，包括算法内容和程序。做好训练、保存和推理的框架，下次需要的时候直接用。做目标检测的东西，于是决定从 Fast R-CNN 重头来过了。其中，Fast R-CNN 只有理论，Faster-RCNN 部分含有代码，不过会在下一篇博客了。 既然是目标检测，就需要做两件事情，目标在哪，目标是什么。对于目标在哪的问题，可以让网络生成一个目标框，目标框有四部分组">
 <meta name="keywords" content="CV">
 <meta property="og:type" content="article">
 <meta property="og:title" content="目标检测篇：Faster R-CNN 系列">
-<meta property="og:url" content="https://muyuuuu.github.io/2021/04/28/faster-rcnn/index.html">
+<meta property="og:url" content="https://yuanjie-ai.github.io/2021/04/28/faster-rcnn/index.html">
 <meta property="og:site_name" content="Just for Life.">
 <meta property="og:description" content="又来开计算机视觉的坑了，这次一定做好整理和记录，包括算法内容和程序。做好训练、保存和推理的框架，下次需要的时候直接用。做目标检测的东西，于是决定从 Fast R-CNN 重头来过了。其中，Fast R-CNN 只有理论，Faster-RCNN 部分含有代码，不过会在下一篇博客了。 既然是目标检测，就需要做两件事情，目标在哪，目标是什么。对于目标在哪的问题，可以让网络生成一个目标框，目标框有四部分组">
 <meta property="og:locale" content="zh-CN">
@@ -33,7 +33,7 @@
 <meta name="twitter:title" content="目标检测篇：Faster R-CNN 系列">
 <meta name="twitter:description" content="又来开计算机视觉的坑了，这次一定做好整理和记录，包括算法内容和程序。做好训练、保存和推理的框架，下次需要的时候直接用。做目标检测的东西，于是决定从 Fast R-CNN 重头来过了。其中，Fast R-CNN 只有理论，Faster-RCNN 部分含有代码，不过会在下一篇博客了。 既然是目标检测，就需要做两件事情，目标在哪，目标是什么。对于目标在哪的问题，可以让网络生成一个目标框，目标框有四部分组">
 
-<link rel="canonical" href="https://muyuuuu.github.io/2021/04/28/faster-rcnn/">
+<link rel="canonical" href="https://yuanjie-ai.github.io/2021/04/28/faster-rcnn/">
 
 
 <script id="page-configurations">
@@ -227,7 +227,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://muyuuuu.github.io/2021/04/28/faster-rcnn/">
+    <link itemprop="mainEntityOfPage" href="https://yuanjie-ai.github.io/2021/04/28/faster-rcnn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -396,7 +396,7 @@
 <li><a href="https://zhuanlan.zhihu.com/p/42553957" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/42553957</a></li>
 <li><a href="https://linzhenyuyuchen.github.io/2019/12/05/Cascade-R-CNN/" target="_blank" rel="noopener">https://linzhenyuyuchen.github.io/2019/12/05/Cascade-R-CNN/</a> （个人认为写的最好）</li>
 </ol>
-<h1 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h1><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;"><a href="https://zhuanlan.zhihu.com/p/39927488" target="_blank" rel="noopener">selective search 算法</a></span><a href="#fnref:1" rev="footnote"> ↩</a></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">2.</span><span style="display: inline-block; vertical-align: top;"><a href="https://arxiv.org/pdf/1504.08083.pdf" target="_blank" rel="noopener">Fast R-CNN</a></span><a href="#fnref:2" rev="footnote"> ↩</a></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">3.</span><span style="display: inline-block; vertical-align: top;"><a href="https://muyuuuu.github.io/2021/04/02/cross-entropy/">交叉熵损失</a></span><a href="#fnref:3" rev="footnote"> ↩</a></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">4.</span><span style="display: inline-block; vertical-align: top;"><a href="https://arxiv.org/abs/1506.01497" target="_blank" rel="noopener">Faster RCNN</a></span><a href="#fnref:4" rev="footnote"> ↩</a></li><li id="fn:5"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">5.</span><span style="display: inline-block; vertical-align: top;"><a href="https://github.com/bubbliiiing/faster-rcnn-pytorch" target="_blank" rel="noopener">pytorch 代码</a></span><a href="#fnref:5" rev="footnote"> ↩</a></li></ol></div></div>
+<h1 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h1><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;"><a href="https://zhuanlan.zhihu.com/p/39927488" target="_blank" rel="noopener">selective search 算法</a></span><a href="#fnref:1" rev="footnote"> ↩</a></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">2.</span><span style="display: inline-block; vertical-align: top;"><a href="https://arxiv.org/pdf/1504.08083.pdf" target="_blank" rel="noopener">Fast R-CNN</a></span><a href="#fnref:2" rev="footnote"> ↩</a></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">3.</span><span style="display: inline-block; vertical-align: top;"><a href="https://yuanjie-ai.github.io/2021/04/02/cross-entropy/">交叉熵损失</a></span><a href="#fnref:3" rev="footnote"> ↩</a></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">4.</span><span style="display: inline-block; vertical-align: top;"><a href="https://arxiv.org/abs/1506.01497" target="_blank" rel="noopener">Faster RCNN</a></span><a href="#fnref:4" rev="footnote"> ↩</a></li><li id="fn:5"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">5.</span><span style="display: inline-block; vertical-align: top;"><a href="https://github.com/bubbliiiing/faster-rcnn-pytorch" target="_blank" rel="noopener">pytorch 代码</a></span><a href="#fnref:5" rev="footnote"> ↩</a></li></ol></div></div>
     </div>
 
     

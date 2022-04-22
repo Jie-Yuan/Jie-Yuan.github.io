@@ -17,14 +17,14 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"muyuuuu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yuanjie-ai.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="经过几天连续的开坑和读源代码，对 mmdetection 的配置流程了解的差不多了。考虑一个实例应用，尝试着将 FGSM 攻击算法的制作的对抗样本植入目标检测中，企图增加网络的鲁棒性，也就是一个自定义输出处理 Pipeline 的实际流程。之后会尝试自定义损失函数，支持简单的对抗训练，如 MART 算法等 1。">
 <meta name="keywords" content="CV">
 <meta property="og:type" content="article">
 <meta property="og:title" content="目标检测篇：自定义 MMDetection 的 Pipeline">
-<meta property="og:url" content="https://muyuuuu.github.io/2021/05/20/MMdetection-pipeline/index.html">
+<meta property="og:url" content="https://yuanjie-ai.github.io/2021/05/20/MMdetection-pipeline/index.html">
 <meta property="og:site_name" content="Just for Life.">
 <meta property="og:description" content="经过几天连续的开坑和读源代码，对 mmdetection 的配置流程了解的差不多了。考虑一个实例应用，尝试着将 FGSM 攻击算法的制作的对抗样本植入目标检测中，企图增加网络的鲁棒性，也就是一个自定义输出处理 Pipeline 的实际流程。之后会尝试自定义损失函数，支持简单的对抗训练，如 MART 算法等 1。">
 <meta property="og:locale" content="zh-CN">
@@ -33,7 +33,7 @@
 <meta name="twitter:title" content="目标检测篇：自定义 MMDetection 的 Pipeline">
 <meta name="twitter:description" content="经过几天连续的开坑和读源代码，对 mmdetection 的配置流程了解的差不多了。考虑一个实例应用，尝试着将 FGSM 攻击算法的制作的对抗样本植入目标检测中，企图增加网络的鲁棒性，也就是一个自定义输出处理 Pipeline 的实际流程。之后会尝试自定义损失函数，支持简单的对抗训练，如 MART 算法等 1。">
 
-<link rel="canonical" href="https://muyuuuu.github.io/2021/05/20/MMdetection-pipeline/">
+<link rel="canonical" href="https://yuanjie-ai.github.io/2021/05/20/MMdetection-pipeline/">
 
 
 <script id="page-configurations">
@@ -227,7 +227,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://muyuuuu.github.io/2021/05/20/MMdetection-pipeline/">
+    <link itemprop="mainEntityOfPage" href="https://yuanjie-ai.github.io/2021/05/20/MMdetection-pipeline/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">

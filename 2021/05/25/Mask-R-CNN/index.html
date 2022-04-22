@@ -17,14 +17,14 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"muyuuuu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yuanjie-ai.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="不同于 FCN 的语义分割，Mask R-CNN 是用于实体分割的。借鉴 FCN 的思想，通过在 Faster R-CNN 的用于边界框识别分支上添加了一个并行的用于预测目标掩码的分支 Mask，在实现目标检测的同时，实现实例分割（object instance segmentation），即把每个目标像素分割出来。而 Faster R-CNN 和 FCN 在之前介绍过，所以本文的重点将会放在损失">
 <meta name="keywords" content="CV">
 <meta property="og:type" content="article">
 <meta property="og:title" content="分割篇：Mask R-CNN">
-<meta property="og:url" content="https://muyuuuu.github.io/2021/05/25/Mask-R-CNN/index.html">
+<meta property="og:url" content="https://yuanjie-ai.github.io/2021/05/25/Mask-R-CNN/index.html">
 <meta property="og:site_name" content="Just for Life.">
 <meta property="og:description" content="不同于 FCN 的语义分割，Mask R-CNN 是用于实体分割的。借鉴 FCN 的思想，通过在 Faster R-CNN 的用于边界框识别分支上添加了一个并行的用于预测目标掩码的分支 Mask，在实现目标检测的同时，实现实例分割（object instance segmentation），即把每个目标像素分割出来。而 Faster R-CNN 和 FCN 在之前介绍过，所以本文的重点将会放在损失">
 <meta property="og:locale" content="zh-CN">
@@ -33,7 +33,7 @@
 <meta name="twitter:title" content="分割篇：Mask R-CNN">
 <meta name="twitter:description" content="不同于 FCN 的语义分割，Mask R-CNN 是用于实体分割的。借鉴 FCN 的思想，通过在 Faster R-CNN 的用于边界框识别分支上添加了一个并行的用于预测目标掩码的分支 Mask，在实现目标检测的同时，实现实例分割（object instance segmentation），即把每个目标像素分割出来。而 Faster R-CNN 和 FCN 在之前介绍过，所以本文的重点将会放在损失">
 
-<link rel="canonical" href="https://muyuuuu.github.io/2021/05/25/Mask-R-CNN/">
+<link rel="canonical" href="https://yuanjie-ai.github.io/2021/05/25/Mask-R-CNN/">
 
 
 <script id="page-configurations">
@@ -227,7 +227,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://muyuuuu.github.io/2021/05/25/Mask-R-CNN/">
+    <link itemprop="mainEntityOfPage" href="https://yuanjie-ai.github.io/2021/05/25/Mask-R-CNN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">

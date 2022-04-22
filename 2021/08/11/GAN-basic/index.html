@@ -17,14 +17,14 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"muyuuuu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yuanjie-ai.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="在做对抗样本的时候，我发现对抗防御和 GAN 在某种程度上很像：  对抗防御：内部生成对抗样本攻击分类器，分类器更新参数防御攻击； GAN：生成器 $G$ 生成样本欺骗判别器，判别器更新防御 $G$ 的欺骗。  所以说，这俩在某种程度上真的很像，所以决定整理一下 GAN 的知识，开拓一下思路，视频内容来自这里。警告：里面有大量数学公式的推导，而我就不一样了，不仅有公式推导还有代码。">
 <meta name="keywords" content="DeepLearning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="花样繁多的GAN">
-<meta property="og:url" content="https://muyuuuu.github.io/2021/08/11/GAN-basic/index.html">
+<meta property="og:url" content="https://yuanjie-ai.github.io/2021/08/11/GAN-basic/index.html">
 <meta property="og:site_name" content="Just for Life.">
 <meta property="og:description" content="在做对抗样本的时候，我发现对抗防御和 GAN 在某种程度上很像：  对抗防御：内部生成对抗样本攻击分类器，分类器更新参数防御攻击； GAN：生成器 $G$ 生成样本欺骗判别器，判别器更新防御 $G$ 的欺骗。  所以说，这俩在某种程度上真的很像，所以决定整理一下 GAN 的知识，开拓一下思路，视频内容来自这里。警告：里面有大量数学公式的推导，而我就不一样了，不仅有公式推导还有代码。">
 <meta property="og:locale" content="zh-CN">
@@ -33,7 +33,7 @@
 <meta name="twitter:title" content="花样繁多的GAN">
 <meta name="twitter:description" content="在做对抗样本的时候，我发现对抗防御和 GAN 在某种程度上很像：  对抗防御：内部生成对抗样本攻击分类器，分类器更新参数防御攻击； GAN：生成器 $G$ 生成样本欺骗判别器，判别器更新防御 $G$ 的欺骗。  所以说，这俩在某种程度上真的很像，所以决定整理一下 GAN 的知识，开拓一下思路，视频内容来自这里。警告：里面有大量数学公式的推导，而我就不一样了，不仅有公式推导还有代码。">
 
-<link rel="canonical" href="https://muyuuuu.github.io/2021/08/11/GAN-basic/">
+<link rel="canonical" href="https://yuanjie-ai.github.io/2021/08/11/GAN-basic/">
 
 
 <script id="page-configurations">
@@ -227,7 +227,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://muyuuuu.github.io/2021/08/11/GAN-basic/">
+    <link itemprop="mainEntityOfPage" href="https://yuanjie-ai.github.io/2021/08/11/GAN-basic/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">

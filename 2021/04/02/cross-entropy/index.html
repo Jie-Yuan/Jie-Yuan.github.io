@@ -17,14 +17,14 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"muyuuuu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yuanjie-ai.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="继上次了解完信息熵后，没想到在对抗训练中又回到了损失函数的分析上。torch实现的有点迷惑，正好趁这次机会，连着代码和公式好好推导下。这种损失的优缺点日后会放上来，主要取决论文进度。">
 <meta name="keywords" content="Algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="交叉熵优缺点分析">
-<meta property="og:url" content="https://muyuuuu.github.io/2021/04/02/cross-entropy/index.html">
+<meta property="og:url" content="https://yuanjie-ai.github.io/2021/04/02/cross-entropy/index.html">
 <meta property="og:site_name" content="Just for Life.">
 <meta property="og:description" content="继上次了解完信息熵后，没想到在对抗训练中又回到了损失函数的分析上。torch实现的有点迷惑，正好趁这次机会，连着代码和公式好好推导下。这种损失的优缺点日后会放上来，主要取决论文进度。">
 <meta property="og:locale" content="zh-CN">
@@ -33,7 +33,7 @@
 <meta name="twitter:title" content="交叉熵优缺点分析">
 <meta name="twitter:description" content="继上次了解完信息熵后，没想到在对抗训练中又回到了损失函数的分析上。torch实现的有点迷惑，正好趁这次机会，连着代码和公式好好推导下。这种损失的优缺点日后会放上来，主要取决论文进度。">
 
-<link rel="canonical" href="https://muyuuuu.github.io/2021/04/02/cross-entropy/">
+<link rel="canonical" href="https://yuanjie-ai.github.io/2021/04/02/cross-entropy/">
 
 
 <script id="page-configurations">
@@ -227,7 +227,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://muyuuuu.github.io/2021/04/02/cross-entropy/">
+    <link itemprop="mainEntityOfPage" href="https://yuanjie-ai.github.io/2021/04/02/cross-entropy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -292,7 +292,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>继上次了解完<a href="https://muyuuuu.github.io/2020/05/09/entropy/">信息熵</a>后，没想到在对抗训练中又回到了损失函数的分析上。<code>torch</code>实现的有点迷惑，正好趁这次机会，连着代码和公式好好推导下。这种损失的优缺点日后会放上来，主要取决论文进度。</p>
+        <p>继上次了解完<a href="https://yuanjie-ai.github.io/2020/05/09/entropy/">信息熵</a>后，没想到在对抗训练中又回到了损失函数的分析上。<code>torch</code>实现的有点迷惑，正好趁这次机会，连着代码和公式好好推导下。这种损失的优缺点日后会放上来，主要取决论文进度。</p>
 <a id="more"></a>
 <h1 id="一个简单实例"><a href="#一个简单实例" class="headerlink" title="一个简单实例"></a>一个简单实例</h1><p>交叉熵的公式定义耳熟能详了：</p>
 <p>\begin{equation}\label{ce}<br>H(p,q) = -\sum_{x\in X} p(x) \log q(x)<br>\end{equation}</p>

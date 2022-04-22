@@ -17,14 +17,14 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"muyuuuu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yuanjie-ai.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="忙里偷闲，写几篇长文，从 YOLO 的 v1 到 v5。没想到时隔多年会回来重新看 YOLO 系列的东西，相比两阶段检测，YOLO 真的太快了，加上一些训练的 trick，mAP 也不会很低。网上看了好多教程不明所以，索性还是直接去读原论文了，读了原论文有些东西还是不理解，索性又去读了源程序。不过为了便于理解，有的地方不会按照论文顺序进行整理。少问问题，读论文产生的疑问在代码里都有解答，不看代码永">
 <meta name="keywords" content="CV">
 <meta property="og:type" content="article">
 <meta property="og:title" content="YOLO目标检测从 V1 开始，细读代码">
-<meta property="og:url" content="https://muyuuuu.github.io/2021/08/26/yolo-v1/index.html">
+<meta property="og:url" content="https://yuanjie-ai.github.io/2021/08/26/yolo-v1/index.html">
 <meta property="og:site_name" content="Just for Life.">
 <meta property="og:description" content="忙里偷闲，写几篇长文，从 YOLO 的 v1 到 v5。没想到时隔多年会回来重新看 YOLO 系列的东西，相比两阶段检测，YOLO 真的太快了，加上一些训练的 trick，mAP 也不会很低。网上看了好多教程不明所以，索性还是直接去读原论文了，读了原论文有些东西还是不理解，索性又去读了源程序。不过为了便于理解，有的地方不会按照论文顺序进行整理。少问问题，读论文产生的疑问在代码里都有解答，不看代码永">
 <meta property="og:locale" content="zh-CN">
@@ -33,7 +33,7 @@
 <meta name="twitter:title" content="YOLO目标检测从 V1 开始，细读代码">
 <meta name="twitter:description" content="忙里偷闲，写几篇长文，从 YOLO 的 v1 到 v5。没想到时隔多年会回来重新看 YOLO 系列的东西，相比两阶段检测，YOLO 真的太快了，加上一些训练的 trick，mAP 也不会很低。网上看了好多教程不明所以，索性还是直接去读原论文了，读了原论文有些东西还是不理解，索性又去读了源程序。不过为了便于理解，有的地方不会按照论文顺序进行整理。少问问题，读论文产生的疑问在代码里都有解答，不看代码永">
 
-<link rel="canonical" href="https://muyuuuu.github.io/2021/08/26/yolo-v1/">
+<link rel="canonical" href="https://yuanjie-ai.github.io/2021/08/26/yolo-v1/">
 
 
 <script id="page-configurations">
@@ -227,7 +227,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://muyuuuu.github.io/2021/08/26/yolo-v1/">
+    <link itemprop="mainEntityOfPage" href="https://yuanjie-ai.github.io/2021/08/26/yolo-v1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -294,7 +294,7 @@
       
         <p>忙里偷闲，写几篇长文，从 YOLO 的 v1 到 v5。没想到时隔多年会回来重新看 YOLO 系列的东西，相比两阶段检测，YOLO 真的太快了，加上一些训练的 trick，mAP 也不会很低。网上看了好多教程不明所以，索性还是直接去读原论文了，读了原论文有些东西还是不理解，索性又去读了源程序。不过为了便于理解，有的地方不会按照论文顺序进行整理。少问问题，读论文产生的疑问在代码里都有解答，不看代码永远不能被称为学会了。</p>
 <a id="more"></a>
-<p>如果对本文有疑问或者想找男朋友，可以联系我，<a href="https://muyuuuu.github.io/about/">点击此处有我联系方式</a>。</p>
+<p>如果对本文有疑问或者想找男朋友，可以联系我，<a href="https://yuanjie-ai.github.io/about/">点击此处有我联系方式</a>。</p>
 <h1 id="YOLO-v1"><a href="#YOLO-v1" class="headerlink" title="YOLO v1"></a>YOLO v1</h1><ul>
 <li>论文地址：<a href="https://arxiv.org/abs/1506.02640" target="_blank" rel="noopener">https://arxiv.org/abs/1506.02640</a></li>
 <li>pytorch 程序地址：<a href="https://github.com/motokimura/yolo_v1_pytorch" target="_blank" rel="noopener">https://github.com/motokimura/yolo_v1_pytorch</a></li>

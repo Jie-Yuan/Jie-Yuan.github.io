@@ -17,14 +17,14 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"muyuuuu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yuanjie-ai.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="写深度学习的代码多了，经常会发现网络准确率低、难以收敛等错误，大多时候不是算法问题，而是人为的 bug，特此记录。 比如：为何网络的误差一直是一个定值？为何同样的网络、同样的优化器和学习率，训练得到的准确率比别人低 20% ？">
 <meta name="keywords" content="DeepLearning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="神经网络常见问题">
-<meta property="og:url" content="https://muyuuuu.github.io/2021/09/04/DNN-issue/index.html">
+<meta property="og:url" content="https://yuanjie-ai.github.io/2021/09/04/DNN-issue/index.html">
 <meta property="og:site_name" content="Just for Life.">
 <meta property="og:description" content="写深度学习的代码多了，经常会发现网络准确率低、难以收敛等错误，大多时候不是算法问题，而是人为的 bug，特此记录。 比如：为何网络的误差一直是一个定值？为何同样的网络、同样的优化器和学习率，训练得到的准确率比别人低 20% ？">
 <meta property="og:locale" content="zh-CN">
@@ -33,7 +33,7 @@
 <meta name="twitter:title" content="神经网络常见问题">
 <meta name="twitter:description" content="写深度学习的代码多了，经常会发现网络准确率低、难以收敛等错误，大多时候不是算法问题，而是人为的 bug，特此记录。 比如：为何网络的误差一直是一个定值？为何同样的网络、同样的优化器和学习率，训练得到的准确率比别人低 20% ？">
 
-<link rel="canonical" href="https://muyuuuu.github.io/2021/09/04/DNN-issue/">
+<link rel="canonical" href="https://yuanjie-ai.github.io/2021/09/04/DNN-issue/">
 
 
 <script id="page-configurations">
@@ -227,7 +227,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://muyuuuu.github.io/2021/09/04/DNN-issue/">
+    <link itemprop="mainEntityOfPage" href="https://yuanjie-ai.github.io/2021/09/04/DNN-issue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -296,7 +296,7 @@
 <p>比如：为何网络的误差一直是一个定值？为何同样的网络、同样的优化器和学习率，训练得到的准确率比别人低 20% ？</p>
 <a id="more"></a>
 <ol>
-<li>神经网络处理数据时不进行<a href="https://muyuuuu.github.io/2021/05/07/DNN-data-normal/">标准化</a>，准确率会下降很多；</li>
+<li>神经网络处理数据时不进行<a href="https://yuanjie-ai.github.io/2021/05/07/DNN-data-normal/">标准化</a>，准确率会下降很多；</li>
 <li>神经网络的学习率至关重要，batch 大而学习率小，batch 小而学习率大，都会导致不收敛问题。此外，学习率衰减很重要，能有效提升<a href="https://github.com/bearpaw/pytorch-classification" target="_blank" rel="noopener">卡在瓶颈</a>中的神经网络的准确率。</li>
 <li>复现去噪器时，噪音数据在损失函数<a href="https://github.com/muyuuuu/Paper-ReImplement/tree/main/ADP-ICML-2021" target="_blank" rel="noopener">内部生成</a>。如果在损失外部生成噪音并输入网络，会导致网络的误差恒定为噪音的方差。</li>
 </ol>

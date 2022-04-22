@@ -17,14 +17,14 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"muyuuuu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yuanjie-ai.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="CV 系列的论文和程序得一点点开坑了。目前准备的计划任务是：FCN，OHEM，Mask RCNN，YOLO，Focal loss，Seesaw loss。别问，问就是网上一点点查阅得到的，然后写写代码。这个系列完结后，大概会结合对抗样本 and 目标检测做一些东西。自己还是差的太远。">
 <meta name="keywords" content="CV">
 <meta property="og:type" content="article">
 <meta property="og:title" content="分割篇：开山之作 FCN">
-<meta property="og:url" content="https://muyuuuu.github.io/2021/05/24/FCN/index.html">
+<meta property="og:url" content="https://yuanjie-ai.github.io/2021/05/24/FCN/index.html">
 <meta property="og:site_name" content="Just for Life.">
 <meta property="og:description" content="CV 系列的论文和程序得一点点开坑了。目前准备的计划任务是：FCN，OHEM，Mask RCNN，YOLO，Focal loss，Seesaw loss。别问，问就是网上一点点查阅得到的，然后写写代码。这个系列完结后，大概会结合对抗样本 and 目标检测做一些东西。自己还是差的太远。">
 <meta property="og:locale" content="zh-CN">
@@ -33,7 +33,7 @@
 <meta name="twitter:title" content="分割篇：开山之作 FCN">
 <meta name="twitter:description" content="CV 系列的论文和程序得一点点开坑了。目前准备的计划任务是：FCN，OHEM，Mask RCNN，YOLO，Focal loss，Seesaw loss。别问，问就是网上一点点查阅得到的，然后写写代码。这个系列完结后，大概会结合对抗样本 and 目标检测做一些东西。自己还是差的太远。">
 
-<link rel="canonical" href="https://muyuuuu.github.io/2021/05/24/FCN/">
+<link rel="canonical" href="https://yuanjie-ai.github.io/2021/05/24/FCN/">
 
 
 <script id="page-configurations">
@@ -227,7 +227,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://muyuuuu.github.io/2021/05/24/FCN/">
+    <link itemprop="mainEntityOfPage" href="https://yuanjie-ai.github.io/2021/05/24/FCN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">

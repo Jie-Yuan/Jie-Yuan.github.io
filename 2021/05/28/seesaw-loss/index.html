@@ -17,14 +17,14 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"muyuuuu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yuanjie-ai.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="论文好像是 2020 年底传到 arxiv 1 的，还比较新。正好最近遇到的问题是类别数量是长尾分布，恰好最近看到 mmdetection 也支持了这个损失函数，索性来看一看这篇论文，算是做个论文笔记吧。不过为了能更容易理解论文的思想，没有按照原论文的内容结构进行整理。">
 <meta name="keywords" content="CV">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面向长尾目标检测的 Seesaw Loss">
-<meta property="og:url" content="https://muyuuuu.github.io/2021/05/28/seesaw-loss/index.html">
+<meta property="og:url" content="https://yuanjie-ai.github.io/2021/05/28/seesaw-loss/index.html">
 <meta property="og:site_name" content="Just for Life.">
 <meta property="og:description" content="论文好像是 2020 年底传到 arxiv 1 的，还比较新。正好最近遇到的问题是类别数量是长尾分布，恰好最近看到 mmdetection 也支持了这个损失函数，索性来看一看这篇论文，算是做个论文笔记吧。不过为了能更容易理解论文的思想，没有按照原论文的内容结构进行整理。">
 <meta property="og:locale" content="zh-CN">
@@ -33,7 +33,7 @@
 <meta name="twitter:title" content="面向长尾目标检测的 Seesaw Loss">
 <meta name="twitter:description" content="论文好像是 2020 年底传到 arxiv 1 的，还比较新。正好最近遇到的问题是类别数量是长尾分布，恰好最近看到 mmdetection 也支持了这个损失函数，索性来看一看这篇论文，算是做个论文笔记吧。不过为了能更容易理解论文的思想，没有按照原论文的内容结构进行整理。">
 
-<link rel="canonical" href="https://muyuuuu.github.io/2021/05/28/seesaw-loss/">
+<link rel="canonical" href="https://yuanjie-ai.github.io/2021/05/28/seesaw-loss/">
 
 
 <script id="page-configurations">
@@ -227,7 +227,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://muyuuuu.github.io/2021/05/28/seesaw-loss/">
+    <link itemprop="mainEntityOfPage" href="https://yuanjie-ai.github.io/2021/05/28/seesaw-loss/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">

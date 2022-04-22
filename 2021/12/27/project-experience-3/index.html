@@ -17,14 +17,14 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"muyuuuu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yuanjie-ai.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="今天来写什么呢？准备整理一些多线程的东西，虽然多线程相对很熟悉了，可每次工程中都会有新的收获。这次不谈多线程的理论问题，毕竟计算机专业都懂多线程的理论并写过相关程序，也了解其使用的背景。之前使用多线程的时候，总是看一看加速比和结果是否准确就完了，那么这次以多线程使用者和多线程设计者的角度出发，来谈一谈如何更好的使用和设计多线程。">
 <meta name="keywords" content="Design">
 <meta property="og:type" content="article">
 <meta property="og:title" content="工程开发经验总结三，以 sspaddmm 为例，再来谈一谈并行加速">
-<meta property="og:url" content="https://muyuuuu.github.io/2021/12/27/project-experience-3/index.html">
+<meta property="og:url" content="https://yuanjie-ai.github.io/2021/12/27/project-experience-3/index.html">
 <meta property="og:site_name" content="Just for Life.">
 <meta property="og:description" content="今天来写什么呢？准备整理一些多线程的东西，虽然多线程相对很熟悉了，可每次工程中都会有新的收获。这次不谈多线程的理论问题，毕竟计算机专业都懂多线程的理论并写过相关程序，也了解其使用的背景。之前使用多线程的时候，总是看一看加速比和结果是否准确就完了，那么这次以多线程使用者和多线程设计者的角度出发，来谈一谈如何更好的使用和设计多线程。">
 <meta property="og:locale" content="zh-CN">
@@ -33,7 +33,7 @@
 <meta name="twitter:title" content="工程开发经验总结三，以 sspaddmm 为例，再来谈一谈并行加速">
 <meta name="twitter:description" content="今天来写什么呢？准备整理一些多线程的东西，虽然多线程相对很熟悉了，可每次工程中都会有新的收获。这次不谈多线程的理论问题，毕竟计算机专业都懂多线程的理论并写过相关程序，也了解其使用的背景。之前使用多线程的时候，总是看一看加速比和结果是否准确就完了，那么这次以多线程使用者和多线程设计者的角度出发，来谈一谈如何更好的使用和设计多线程。">
 
-<link rel="canonical" href="https://muyuuuu.github.io/2021/12/27/project-experience-3/">
+<link rel="canonical" href="https://yuanjie-ai.github.io/2021/12/27/project-experience-3/">
 
 
 <script id="page-configurations">
@@ -227,7 +227,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://muyuuuu.github.io/2021/12/27/project-experience-3/">
+    <link itemprop="mainEntityOfPage" href="https://yuanjie-ai.github.io/2021/12/27/project-experience-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">

@@ -17,14 +17,14 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"muyuuuu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yuanjie-ai.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="还是要认真的学习一会儿，降低多巴胺的分泌。在使用 triplet loss 学表示的时候，出现了模型坍塌的情况，也就是说，模型对任何输入的输出都是一样的，损失恒定的现象。在网上搜了一些解决方案后，需要用户去花精力构造正负样本，我不喜欢这样的东西，所以开始看了自监督的论文，毕竟都是学表示。也发现自监督会在一段时间内成为未来的视觉领域的主流，正好我做的东西和自监督也算相关，做一个论文整理。包括了 Mo">
 <meta name="keywords" content="CV">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CV 领域的自监督">
-<meta property="og:url" content="https://muyuuuu.github.io/2021/12/28/SSL-intro/index.html">
+<meta property="og:url" content="https://yuanjie-ai.github.io/2021/12/28/SSL-intro/index.html">
 <meta property="og:site_name" content="Just for Life.">
 <meta property="og:description" content="还是要认真的学习一会儿，降低多巴胺的分泌。在使用 triplet loss 学表示的时候，出现了模型坍塌的情况，也就是说，模型对任何输入的输出都是一样的，损失恒定的现象。在网上搜了一些解决方案后，需要用户去花精力构造正负样本，我不喜欢这样的东西，所以开始看了自监督的论文，毕竟都是学表示。也发现自监督会在一段时间内成为未来的视觉领域的主流，正好我做的东西和自监督也算相关，做一个论文整理。包括了 Mo">
 <meta property="og:locale" content="zh-CN">
@@ -33,7 +33,7 @@
 <meta name="twitter:title" content="CV 领域的自监督">
 <meta name="twitter:description" content="还是要认真的学习一会儿，降低多巴胺的分泌。在使用 triplet loss 学表示的时候，出现了模型坍塌的情况，也就是说，模型对任何输入的输出都是一样的，损失恒定的现象。在网上搜了一些解决方案后，需要用户去花精力构造正负样本，我不喜欢这样的东西，所以开始看了自监督的论文，毕竟都是学表示。也发现自监督会在一段时间内成为未来的视觉领域的主流，正好我做的东西和自监督也算相关，做一个论文整理。包括了 Mo">
 
-<link rel="canonical" href="https://muyuuuu.github.io/2021/12/28/SSL-intro/">
+<link rel="canonical" href="https://yuanjie-ai.github.io/2021/12/28/SSL-intro/">
 
 
 <script id="page-configurations">
@@ -227,7 +227,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://muyuuuu.github.io/2021/12/28/SSL-intro/">
+    <link itemprop="mainEntityOfPage" href="https://yuanjie-ai.github.io/2021/12/28/SSL-intro/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
