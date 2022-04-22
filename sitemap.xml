@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+    <loc>https://yuanjie-ai.github.io/2022/05</loc>
+    <lastmod>test</lastmod>
+  </url>
+
   <url>
     <loc>https://yuanjie-ai.github.io/resume</loc>
     <lastmod>2022-04-16</lastmod>
