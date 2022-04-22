@@ -17,14 +17,14 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"muyuuuu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yuanjie-ai.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="寒假某天下午的突发奇想，想实现一款图像预览软件。大概思路是：在软件的左侧点击图片，软件的右侧就能实时预览图片，因为感觉这个功能有一定的应用场景，所以实现了一下。">
 <meta name="keywords" content="GUI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PyQt 打造的图像预览软件">
-<meta property="og:url" content="https://muyuuuu.github.io/2022/02/12/pyqt5-view-image/index.html">
+<meta property="og:url" content="https://yuanjie-ai.github.io/2022/02/12/pyqt5-view-image/index.html">
 <meta property="og:site_name" content="Just for Life.">
 <meta property="og:description" content="寒假某天下午的突发奇想，想实现一款图像预览软件。大概思路是：在软件的左侧点击图片，软件的右侧就能实时预览图片，因为感觉这个功能有一定的应用场景，所以实现了一下。">
 <meta property="og:locale" content="zh-CN">
@@ -33,7 +33,7 @@
 <meta name="twitter:title" content="PyQt 打造的图像预览软件">
 <meta name="twitter:description" content="寒假某天下午的突发奇想，想实现一款图像预览软件。大概思路是：在软件的左侧点击图片，软件的右侧就能实时预览图片，因为感觉这个功能有一定的应用场景，所以实现了一下。">
 
-<link rel="canonical" href="https://muyuuuu.github.io/2022/02/12/pyqt5-view-image/">
+<link rel="canonical" href="https://yuanjie-ai.github.io/2022/02/12/pyqt5-view-image/">
 
 
 <script id="page-configurations">
@@ -128,7 +128,7 @@
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于兰铃</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于betterme</a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -227,11 +227,11 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://muyuuuu.github.io/2022/02/12/pyqt5-view-image/">
+    <link itemprop="mainEntityOfPage" href="https://yuanjie-ai.github.io/2022/02/12/pyqt5-view-image/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="兰铃">
+      <meta itemprop="name" content="betterme">
       <meta itemprop="description" content="爱生活-------爱读书-------爱摄影   爱运动-------爱睡觉-------爱旅行">
     </span>
 
@@ -292,7 +292,7 @@
 <p>简单说一下设计思路吧，代码没啥难度：</p>
 <ol>
 <li>使用 GridLayout 手动布局提升美感，左侧是文件列表，右侧是图片预览</li>
-<li>当从左侧文件列表点击文件时，判断点击的文件是否为图像类型，如果是，右侧显示图像。关于如何显示高清图像，可以参考我之前的<a href="https://muyuuuu.github.io/2021/04/10/pyqt5-load-huge-image/">博客</a></li>
+<li>当从左侧文件列表点击文件时，判断点击的文件是否为图像类型，如果是，右侧显示图像。关于如何显示高清图像，可以参考我之前的<a href="https://yuanjie-ai.github.io/2021/04/10/pyqt5-load-huge-image/">博客</a></li>
 <li>文件列表使用 <code>QTreeView</code> 和 <code>QListView</code> 实现，<code>QTreeView</code> 负责显示文件夹层级关系，<code>QListView</code> 负责显示文件。两者都挂载文件模型。</li>
 <li><del>Qt 的使用就是学会基础操作后大量翻阅官方库的过程。</del></li>
 </ol>
@@ -333,12 +333,12 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/wechatpay.jpg" alt="兰铃 o(*≧▽≦)ツ">
+        <img src="/images/wechatpay.jpg" alt="betterme o(*≧▽≦)ツ">
         <p>o(*≧▽≦)ツ</p>
       </div>
       
       <div style="display: inline-block;">
-        <img src="/images/alipay.jpg" alt="兰铃 ♪(^∇^*)">
+        <img src="/images/alipay.jpg" alt="betterme ♪(^∇^*)">
         <p>♪(^∇^*)</p>
       </div>
 
@@ -453,9 +453,9 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="兰铃"
+    <img class="site-author-image" itemprop="image" alt="betterme"
       src="/images/avatar.gif">
-  <p class="site-author-name" itemprop="name">兰铃</p>
+  <p class="site-author-name" itemprop="name">betterme</p>
   <div class="site-description" itemprop="description">爱生活-------爱读书-------爱摄影   爱运动-------爱睡觉-------爱旅行</div>
 </div>
 <div class="site-state-wrap motion-element">
@@ -512,7 +512,7 @@
   <span class="with-love">
     <i class="user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">兰铃</span>
+  <span class="author" itemprop="copyrightHolder">betterme</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>

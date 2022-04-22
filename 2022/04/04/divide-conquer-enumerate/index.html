@@ -17,14 +17,14 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"muyuuuu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yuanjie-ai.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="之后的日子，大概会放缓刷题的脚步进行简单的整理，因为有些题目是有规律的，需要做号总结和整理，不能刷一个忘一个。今日总结：题目要求返回所有结果，且能找到分界点分解为子问题的，都可以套用分治枚举算法。">
 <meta name="keywords" content="DataStructure">
 <meta property="og:type" content="article">
 <meta property="og:title" content="分治枚举">
-<meta property="og:url" content="https://muyuuuu.github.io/2022/04/04/divide-conquer-enumerate/index.html">
+<meta property="og:url" content="https://yuanjie-ai.github.io/2022/04/04/divide-conquer-enumerate/index.html">
 <meta property="og:site_name" content="Just for Life.">
 <meta property="og:description" content="之后的日子，大概会放缓刷题的脚步进行简单的整理，因为有些题目是有规律的，需要做号总结和整理，不能刷一个忘一个。今日总结：题目要求返回所有结果，且能找到分界点分解为子问题的，都可以套用分治枚举算法。">
 <meta property="og:locale" content="zh-CN">
@@ -33,7 +33,7 @@
 <meta name="twitter:title" content="分治枚举">
 <meta name="twitter:description" content="之后的日子，大概会放缓刷题的脚步进行简单的整理，因为有些题目是有规律的，需要做号总结和整理，不能刷一个忘一个。今日总结：题目要求返回所有结果，且能找到分界点分解为子问题的，都可以套用分治枚举算法。">
 
-<link rel="canonical" href="https://muyuuuu.github.io/2022/04/04/divide-conquer-enumerate/">
+<link rel="canonical" href="https://yuanjie-ai.github.io/2022/04/04/divide-conquer-enumerate/">
 
 
 <script id="page-configurations">
@@ -128,7 +128,7 @@
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于兰铃</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于betterme</a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -227,11 +227,11 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://muyuuuu.github.io/2022/04/04/divide-conquer-enumerate/">
+    <link itemprop="mainEntityOfPage" href="https://yuanjie-ai.github.io/2022/04/04/divide-conquer-enumerate/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="兰铃">
+      <meta itemprop="name" content="betterme">
       <meta itemprop="description" content="爱生活-------爱读书-------爱摄影   爱运动-------爱睡觉-------爱旅行">
     </span>
 
@@ -344,12 +344,12 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/wechatpay.jpg" alt="兰铃 o(*≧▽≦)ツ">
+        <img src="/images/wechatpay.jpg" alt="betterme o(*≧▽≦)ツ">
         <p>o(*≧▽≦)ツ</p>
       </div>
       
       <div style="display: inline-block;">
-        <img src="/images/alipay.jpg" alt="兰铃 ♪(^∇^*)">
+        <img src="/images/alipay.jpg" alt="betterme ♪(^∇^*)">
         <p>♪(^∇^*)</p>
       </div>
 
@@ -464,9 +464,9 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="兰铃"
+    <img class="site-author-image" itemprop="image" alt="betterme"
       src="/images/avatar.gif">
-  <p class="site-author-name" itemprop="name">兰铃</p>
+  <p class="site-author-name" itemprop="name">betterme</p>
   <div class="site-description" itemprop="description">爱生活-------爱读书-------爱摄影   爱运动-------爱睡觉-------爱旅行</div>
 </div>
 <div class="site-state-wrap motion-element">
@@ -523,7 +523,7 @@
   <span class="with-love">
     <i class="user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">兰铃</span>
+  <span class="author" itemprop="copyrightHolder">betterme</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>

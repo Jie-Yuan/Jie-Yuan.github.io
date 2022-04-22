@@ -17,14 +17,14 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"muyuuuu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yuanjie-ai.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="去年寒假接到了一个遥感图像语义分割的任务，存在着严重的类别不平衡问题。当时想着使用经典的类别不平衡损失 focal loss 和 dice loss 解决一下，但是效果不升反降，甚至不如传统的交叉熵损失函数。 而且我在 github 上搜类似的项目，也都不推荐使用这些 loss。但是在 mmseg 的文档中，我们又发现 dice loss 有明显的提升，来冷静分析一下这是为什么。本文默认读者了解">
 <meta name="keywords" content="DeepLearning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="遥感图像分割，类别不平衡损失为何失效了？">
-<meta property="og:url" content="https://muyuuuu.github.io/2022/04/04/deal-unbalance-label/index.html">
+<meta property="og:url" content="https://yuanjie-ai.github.io/2022/04/04/deal-unbalance-label/index.html">
 <meta property="og:site_name" content="Just for Life.">
 <meta property="og:description" content="去年寒假接到了一个遥感图像语义分割的任务，存在着严重的类别不平衡问题。当时想着使用经典的类别不平衡损失 focal loss 和 dice loss 解决一下，但是效果不升反降，甚至不如传统的交叉熵损失函数。 而且我在 github 上搜类似的项目，也都不推荐使用这些 loss。但是在 mmseg 的文档中，我们又发现 dice loss 有明显的提升，来冷静分析一下这是为什么。本文默认读者了解">
 <meta property="og:locale" content="zh-CN">
@@ -33,7 +33,7 @@
 <meta name="twitter:title" content="遥感图像分割，类别不平衡损失为何失效了？">
 <meta name="twitter:description" content="去年寒假接到了一个遥感图像语义分割的任务，存在着严重的类别不平衡问题。当时想着使用经典的类别不平衡损失 focal loss 和 dice loss 解决一下，但是效果不升反降，甚至不如传统的交叉熵损失函数。 而且我在 github 上搜类似的项目，也都不推荐使用这些 loss。但是在 mmseg 的文档中，我们又发现 dice loss 有明显的提升，来冷静分析一下这是为什么。本文默认读者了解">
 
-<link rel="canonical" href="https://muyuuuu.github.io/2022/04/04/deal-unbalance-label/">
+<link rel="canonical" href="https://yuanjie-ai.github.io/2022/04/04/deal-unbalance-label/">
 
 
 <script id="page-configurations">
@@ -128,7 +128,7 @@
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于兰铃</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于betterme</a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -227,11 +227,11 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://muyuuuu.github.io/2022/04/04/deal-unbalance-label/">
+    <link itemprop="mainEntityOfPage" href="https://yuanjie-ai.github.io/2022/04/04/deal-unbalance-label/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="兰铃">
+      <meta itemprop="name" content="betterme">
       <meta itemprop="description" content="爱生活-------爱读书-------爱摄影   爱运动-------爱睡觉-------爱旅行">
     </span>
 
@@ -295,7 +295,7 @@
         <p>去年寒假接到了一个遥感图像语义分割的任务，存在着严重的类别不平衡问题。当时想着使用经典的类别不平衡损失 focal loss 和 dice loss 解决一下，但是效果不升反降，甚至不如传统的交叉熵损失函数。</p>
 <p>而且我在 github 上搜类似的项目，也都不推荐使用这些 loss。但是在 mmseg 的文档中，我们又发现 dice loss 有明显的提升，来冷静分析一下这是为什么。本文默认读者了解 focal loss 和 dice loss，因此不会对损失函数进行讲解。</p>
 <a id="more"></a>
-<p>其实我也不是第一次遇到这种经典损失函数失效的现象，之前 triplet loss 也频频失效，一度上了我的黑名单。关于 trilet loss 何时失效以及为什么 and 如何解决，可以参考之前的文章，<a href="https://muyuuuu.github.io/2022/03/24/E-commerce-Search-Recall/">如何更好的提取文本表示</a>。但是我们需要知道的是，失效分两种情况，一种是实现错误，一种是不适用于当前场景。</p>
+<p>其实我也不是第一次遇到这种经典损失函数失效的现象，之前 triplet loss 也频频失效，一度上了我的黑名单。关于 trilet loss 何时失效以及为什么 and 如何解决，可以参考之前的文章，<a href="https://yuanjie-ai.github.io/2022/03/24/E-commerce-Search-Recall/">如何更好的提取文本表示</a>。但是我们需要知道的是，失效分两种情况，一种是实现错误，一种是不适用于当前场景。</p>
 <h1 id="focal-loss"><a href="#focal-loss" class="headerlink" title="focal loss"></a>focal loss</h1><p>focal loss 是目标检测领域中很经典的存在，focal loss 和 retinanet 发在同一篇论文，我看源程序，<strong>发现在实现上有一些小细节是网上常见博客不曾提及的</strong>。我们知道基于 anchor 生成检测框时，会有大量的无效检测框，这些框和真实目标毫不相交，这就导致了样本不平衡的问题。而 focal loss 的解决方案也是简单粗暴，使用 $\alpha$ 控制正负样本不平衡问题，使用 $\gamma$ 控制难易样本的区分。</p>
 <p>在实现中，作者将与真实目标框 IoU 大于 0.5 的视为正样本，IoU 小于 0.4 的视为负样本，还有介于两者之间模棱两可的模糊样本。将所有的预测结果和真实标签计算损失，我们希望正样本的分类结果接近 1，其余样本接近 0，因此有严重的类别不平衡问题，于是使用了 focal loss 进行缓解。但是在反向传播的时候，<strong>并不是所有预测结果都要反向传播</strong>，而是对损失进行筛选，只回传正样本部分的损失，其余损失不考虑。</p>
 <p>不然那么多负样本在那里，假设有 10000 个预测结果，只有 10 个真实目标，我就算输出 10000 个 0 损失也不会低，但是检测不到目标，俗称模型坍塌。因此源程序中做了这样的处理。</p>
@@ -356,12 +356,12 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/wechatpay.jpg" alt="兰铃 o(*≧▽≦)ツ">
+        <img src="/images/wechatpay.jpg" alt="betterme o(*≧▽≦)ツ">
         <p>o(*≧▽≦)ツ</p>
       </div>
       
       <div style="display: inline-block;">
-        <img src="/images/alipay.jpg" alt="兰铃 ♪(^∇^*)">
+        <img src="/images/alipay.jpg" alt="betterme ♪(^∇^*)">
         <p>♪(^∇^*)</p>
       </div>
 
@@ -476,9 +476,9 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="兰铃"
+    <img class="site-author-image" itemprop="image" alt="betterme"
       src="/images/avatar.gif">
-  <p class="site-author-name" itemprop="name">兰铃</p>
+  <p class="site-author-name" itemprop="name">betterme</p>
   <div class="site-description" itemprop="description">爱生活-------爱读书-------爱摄影   爱运动-------爱睡觉-------爱旅行</div>
 </div>
 <div class="site-state-wrap motion-element">
@@ -535,7 +535,7 @@
   <span class="with-love">
     <i class="user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">兰铃</span>
+  <span class="author" itemprop="copyrightHolder">betterme</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
