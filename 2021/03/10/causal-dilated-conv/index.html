@@ -312,7 +312,7 @@
 <p>可以看到网络在预测输出时，能看到16个数据的信息，比之前的5个数据的信息要多出三倍，做出的决策也会更加稳定。在某种意义上，也就能像LSTM那样处理序列数据了。</p>
 <p>也会你会有疑问，<code>1</code>号节点有历史数据，假设<code>1</code>号节点已经是输出序列的最后一个元素了，那<code>2</code>号节点和<code>3</code>号节点呢，他们的输入从哪里来？看了代码我才明白，填充即可，也就是<code>conv</code>里面常用的<code>padding</code>。卷积过程保证输入和输出的长度不变，填充多少，</p>
 <p>至于残差连接或加入条件信息，这些都是可以的，在<a href="https://arxiv.org/pdf/1609.03499.pdf" target="_blank" rel="noopener"> casual dilated conv </a>首次被提出的论文中都有这些内容。</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>读懂一个算法精髓最好的方式是读<a href="https://github.com/muyuuuu/Algorithm/blob/master/causal-dilated-conv/casualCNN.py" target="_blank" rel="noopener">代码</a>，理解一个算法精髓最好的方式是尝试去理解它为什么这么做，而不是这么做有什么好处。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>读懂一个算法精髓最好的方式是读<a href="https://github.com/yuanjie-ai/Algorithm/blob/master/causal-dilated-conv/casualCNN.py" target="_blank" rel="noopener">代码</a>，理解一个算法精髓最好的方式是尝试去理解它为什么这么做，而不是这么做有什么好处。</p>
 
     </div>
 
@@ -497,7 +497,7 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/muyuuuu" title="GitHub → https://github.com/muyuuuu" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/yuanjie-ai" title="GitHub → https://github.com/yuanjie-ai" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
       </span>
   </div>
 
@@ -814,8 +814,8 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       clientID    : '639ddab88527bca5fe75',
       clientSecret: '0c08625a06e8796096a190cad5c07b4909d1e960',
       repo        : 'blabla',
-      owner       : 'muyuuuu',
-      admin       : ['muyuuuu'],
+      owner       : 'yuanjie-ai',
+      admin       : ['yuanjie-ai'],
       id          : '0b5d8251cbe1c046d50fc90b2ec46ee5',
         language: 'zh-CN',
       distractionFreeMode: true

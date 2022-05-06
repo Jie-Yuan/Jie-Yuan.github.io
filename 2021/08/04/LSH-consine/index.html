@@ -326,7 +326,7 @@
 </ul>
 <p>那么，假设数据库里面有 10000 条数据，那么我可以设置 10 个哈希函数，因为 $2^{10}=1024$，这样就有了 1024 个桶。而如果 10000 数据分布均匀，每个桶就可以有 10 条左右的数据，查询也快。至于哈希表，2个，3个都是可以的，但是不能太多。</p>
 <p>此外还要注意的是，每个哈希桶内的元素数最好是均匀的，这样查询时间也更稳定。所以要设置合理的哈希函数的机制，也就是 <code>pos</code> 的分布一定要均匀。</p>
-<h1 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h1><p>我自己实现了一份<a href="https://github.com/muyuuuu/SeetaFace-Retri/tree/main/CosineLSH" target="_blank" rel="noopener">局部敏感哈希程序</a>，我是 C++ 初学者，代码写的不是很难，相信你看完代码是可以理解局部敏感哈希算法的。计算相似度是使用的余弦距离，因为欧拉距离会面临维灾。<code>modules</code> 里面的 <code>config.cpp</code> 可以忽略，那个是为了衔接其他业务设计的。</p>
+<h1 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h1><p>我自己实现了一份<a href="https://github.com/yuanjie-ai/SeetaFace-Retri/tree/main/CosineLSH" target="_blank" rel="noopener">局部敏感哈希程序</a>，我是 C++ 初学者，代码写的不是很难，相信你看完代码是可以理解局部敏感哈希算法的。计算相似度是使用的余弦距离，因为欧拉距离会面临维灾。<code>modules</code> 里面的 <code>config.cpp</code> 可以忽略，那个是为了衔接其他业务设计的。</p>
 <h2 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h2><p>处理 <code>13466 X 2048</code> 大小的数据，即 13466 条数据，每条数据的维度是 2048 维。构建 1024 个哈希函数，两张哈希表。log 日志显示每秒哈希 50 条数据。 对 100 条数据进行查询，每条数据返回最接近的 5 条数据。每条数据的平均查询时间为 0.86 秒，最低时间为 0.34 秒，召回率接近 100% 。</p>
 
     </div>
@@ -512,7 +512,7 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/muyuuuu" title="GitHub → https://github.com/muyuuuu" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/yuanjie-ai" title="GitHub → https://github.com/yuanjie-ai" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
       </span>
   </div>
 
@@ -829,8 +829,8 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       clientID    : '639ddab88527bca5fe75',
       clientSecret: '0c08625a06e8796096a190cad5c07b4909d1e960',
       repo        : 'blabla',
-      owner       : 'muyuuuu',
-      admin       : ['muyuuuu'],
+      owner       : 'yuanjie-ai',
+      admin       : ['yuanjie-ai'],
       id          : 'a25bf52d173c6784305fe228f17b48e1',
         language: 'zh-CN',
       distractionFreeMode: true

@@ -347,7 +347,7 @@
 <li>双塔结构不要尝试了，即 query 一个全连接，doc 一个全连接，两者共享一个 bert，企图让两者的表示分开不混杂在一起，但效果奇差无比。</li>
 <li>SimCSE 的损失函数在 CV 的自监督领域也有应用，我尝试把 CV 自监督领域最新的损失套用到这里，但结果很难收敛。</li>
 </ul>
-<h1 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h1><p><a href="https://github.com/muyuuuu/E-commerce-Search-Recall" target="_blank" rel="noopener">https://github.com/muyuuuu/E-commerce-Search-Recall</a></p>
+<h1 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h1><p><a href="https://github.com/yuanjie-ai/E-commerce-Search-Recall" target="_blank" rel="noopener">https://github.com/yuanjie-ai/E-commerce-Search-Recall</a></p>
 <p>为什么不用 tensorflow？我 17 年 10 月学 tf 的时候，它那个 with session 和 placeholder 我实在理解不了，那会儿才大二，编程功底很差。19 年 4 月再去看的时候，编程风格和语法大改，好像是什么磁带？梯度一会儿有一会儿没有，混乱的api设计导致代码写的晕晕的，而且和 keras 的关系我也没理解。20 年 7 月的时候我又去看，仿佛完全 keras 化，<code>tf.keras</code> 我实在是被震惊到了，编程风格和语法又又又有改动。我怕我学会了它又出现了 <code>tf.torch</code>，20 年 10 月左右入坑 pytorch，API 稳定，用着也很顺手，也就放弃了学 tf。</p>
 <p>不过还是建议各位用 tf，毕竟这个项目最终要落地到工程，这就涉及到部署和性能优化，不是简简单单实现一个算法就可以完美解决所有问题。</p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
@@ -539,7 +539,7 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/muyuuuu" title="GitHub → https://github.com/muyuuuu" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/yuanjie-ai" title="GitHub → https://github.com/yuanjie-ai" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
       </span>
   </div>
 
@@ -856,8 +856,8 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       clientID    : '639ddab88527bca5fe75',
       clientSecret: '0c08625a06e8796096a190cad5c07b4909d1e960',
       repo        : 'blabla',
-      owner       : 'muyuuuu',
-      admin       : ['muyuuuu'],
+      owner       : 'yuanjie-ai',
+      admin       : ['yuanjie-ai'],
       id          : '190440fc6f3a4b8f862b5f4895837f04',
         language: 'zh-CN',
       distractionFreeMode: true

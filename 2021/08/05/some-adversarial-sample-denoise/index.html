@@ -320,7 +320,7 @@
 <p><img data-src="https://z3.ax1x.com/2021/08/22/hpQS3Q.png" alt></p>
 <p>核心思想：基于干净样本和对抗样本在模型高维的差异来指导去噪器的训练。设 $x$ 为干净样本，$x^\star$ 为对抗样本，$\hat{x}$ 为对抗样本去噪后的样本。论文选择 U-Net 结构对样本进行去噪，输入为 $x^\star$，输出为同等大小的 $-d\hat{x}$，那么 $\hat{x}=x^\star - d\hat{x}$，使用 $L_1$ 范数作为 $\hat{x}$ 和 $x$ 的损失。第二个损为 $f_l(x)$ 与 $f_l(\hat{x})$ 的 $L_1$ 范数，即去噪样本和干净样本在模型第 $l$ 层的差异应尽可能接近。</p>
 <p>我觉得这篇论文的思想是不错的，所以在我的工作中也借鉴了这篇论文的思想。分别在模型的输入层和隐层对对抗样本进行去噪，不过其他内容则不一样了。</p>
-<h1 id="NRP"><a href="#NRP" class="headerlink" title="NRP"></a>NRP</h1><p>来自论文：A Self-supervised Approach for Adversarial Robustness, CVPR 2020。这篇论文我也<a href="https://github.com/muyuuuu/Paper-ReImplement" target="_blank" rel="noopener">复现</a>了，讲真复现结果很差。一方面是论文中给出的参数不合理，一方面是论文并没有对一些东西解释清楚，最重要的是不仅没给代码，还没说怎么实现他的代码，也没有说某些实验参数，所以我只能按照论文描述来实现代码了。那为什么还要写呢？因为这篇论文借鉴 GAN 的思想来去除扰动，还是感觉有一点点新意的。</p>
+<h1 id="NRP"><a href="#NRP" class="headerlink" title="NRP"></a>NRP</h1><p>来自论文：A Self-supervised Approach for Adversarial Robustness, CVPR 2020。这篇论文我也<a href="https://github.com/yuanjie-ai/Paper-ReImplement" target="_blank" rel="noopener">复现</a>了，讲真复现结果很差。一方面是论文中给出的参数不合理，一方面是论文并没有对一些东西解释清楚，最重要的是不仅没给代码，还没说怎么实现他的代码，也没有说某些实验参数，所以我只能按照论文描述来实现代码了。那为什么还要写呢？因为这篇论文借鉴 GAN 的思想来去除扰动，还是感觉有一点点新意的。</p>
 <p><img data-src="https://z3.ax1x.com/2021/08/22/hpQ3E6.png" alt></p>
 <p>作者定义一个提纯网络 $P$ 用于去除噪音，定义判别网络 $C$ 来判断当前样本是对抗样本还是干净样本，定义 backbone $F$ 来提取对抗样本和干净样本的特征差异生成自监督扰动，将扰动叠加至干净样本生成对抗样本，作为 $P$ 的训练数据。$P$ 去噪后传送给 $C$，以此来定义 $P$ 去除扰动的好坏。损失函数由三个部分组成，最终带权相加组成最终的损失函数：</p>
 <ul>
@@ -546,7 +546,7 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/muyuuuu" title="GitHub → https://github.com/muyuuuu" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/yuanjie-ai" title="GitHub → https://github.com/yuanjie-ai" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
       </span>
   </div>
 
@@ -863,8 +863,8 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       clientID    : '639ddab88527bca5fe75',
       clientSecret: '0c08625a06e8796096a190cad5c07b4909d1e960',
       repo        : 'blabla',
-      owner       : 'muyuuuu',
-      admin       : ['muyuuuu'],
+      owner       : 'yuanjie-ai',
+      admin       : ['yuanjie-ai'],
       id          : 'a9a6caf167cede0498ad2a746bf0add8',
         language: 'zh-CN',
       distractionFreeMode: true
