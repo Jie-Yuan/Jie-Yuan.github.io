@@ -49,7 +49,7 @@
 
 ---
 
-<details><summary><h3>竞赛经历</h3></summary>
+<details><summary><b>竞赛经历</b></summary>
 
 <br>
 2020 小米第五届数据挖掘大赛：手机换机用户预测	<b>冠军</b>
@@ -63,7 +63,6 @@
 <br>
 2017 DF CCF大数据：小超市供销存管理优化	<b>冠军</b>
 
-<br>
 2017 DF CCF大数据：企业经营退出风险预测	<b>季军</b>
 
 </details>
