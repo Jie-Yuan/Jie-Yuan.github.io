@@ -5,8 +5,8 @@
 - 工作年限：6年
 - 期望职位：算法
 - 联系方式：18550288233
-- Github：`https://github.com/yuanjie-ai`
 - 教育背景：河海大学 硕士 电子与通信工程系
+- Github：`https://github.com/yuanjie-ai`
 
 ---
 #### 工作经历
